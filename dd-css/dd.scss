@@ -9,23 +9,36 @@ $hoverdarkbtn: inset 0 0 0 60px rgba(0,0,0,0.25), 0 0 0 1px rgba(0,0,0,0.1), 0 0
 $prehoverlightbtn: 0 2px 0 rgba(0,0,0,0.1), 0 0 1px rgba(0,0,0,0.1), inset 0 0 0 0 rgba(0,0,0,0.025), 0 0 0 10px rgba(0,0,0,0);
 $hoverlightbtn: 0 0 0 rgba(0,0,0,0.1), 0 0 1px rgba(0,0,0,0.1), inset 0 0 0 100px rgba(0,0,0,0.025), 0 0 0 0 rgba(0,0,0,0.025);
 $animate: all .25s ease-in-out;
+
+//colours
+
 $body:#190d23;
+$rail: #190d23;
+$stroke:#190d23;
+
+$body50: rgba($body, .5);
+
+$shadow:#1d2049;
+
 $skin:#efd4c6;
 $top: #8E7A5D;
 $radius:1em;
 
-body * {
+/*$tree1: #AC6670;
+$tree2: #4F2867;*/
+
+$tree1: #683f44;
+$tree2: #20112a;
+$tree3:#444a2f;
+$tree4: #23241a;
+
+$horizon:#1d2049;
+
+$none:rgba(0,0,0,0);
+
+body *  {
     box-sizing: border-box;
     display: block;
-}
-.animating picture *, .animating picture *:before, .animating picture *:after {
-    transition: all .25s linear;
-    /*transition-property: left, transform, height, width;*/
-}
-.animating background *, .animating background,
-.animating foreground, .animating foreground *,
-.animating background *:before, .animating background *:after{
-    transition: all .5s linear .5s;
 }
 html, body {
     padding: 0;
@@ -79,12 +92,12 @@ picture:before {
     display: block;
 }
 
-picture *, picture *:before, picture *:after, background *, 
+picture *, picture *:before, picture *:after, background *,
 background *:before, background *:after, foreground *, foreground *:before, foreground *:after {
     position: absolute;
     content: '';
 }
-picture *, picture *:before, picture *:after, background *, background *:before, background *:after {
+picture *, picture *:before, picture *:after, background *, background *:before, background *:after, foreground *, foreground *:before, foreground *:after  {
     top:0;
     left:0;
 }
@@ -92,9 +105,9 @@ picture, background, foreground {
     perspective: 5000px;
     perspective-origin: 50% 50%;
 }
-picture, picture * {
-    transform-style: preserve-3d;
-}
+    picture, picture *, foreground, foreground *, background, background * {
+        transform-style: preserve-3d;
+    }
 picture > * {
     position: absolute;
     top: 0;
@@ -132,9 +145,75 @@ text {
     position: relative;
     z-index: 1;
 }
+page:not(#page0) {
+    &:before, &:after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    &:before {
+        z-index: -1;
+        transform: rotate(-.5deg);
+        background: rgba(245,245,245,.95);
+        top: 0;
+        left: 0;
+    }
+
+    &:after {
+        background: rgba(0,0,0,0.1);
+        z-index: -2;
+        top: 2em;
+        left: 2em;
+        transform: rotate(2deg);
+    }
+
+    &, &:before, &:after {
+        border-radius: 1em;
+    }
+}
+
+page:not(#page0):nth-of-type(even) {
+
+    &:before {
+        transform: rotate(.5deg);
+    }
+
+    &:after {
+        transform: rotate(-2deg);
+    }
+}
+
+ //last page
+
+page#pagex {
+
+    &:before, &:after {
+        transform: rotate(0)!important;
+    }
+    &:after {
+        height: calc(100% - 2em)!important;
+    }
+
+    &, &:before, &:after {
+        border-radius: 1em 1em 0 0;
+    }
+}
+
 @import 'page0';
 @import 'page1';
 @import 'page2';
+@import 'page3';
+@import 'page4';
+@import 'page5';
+@import 'page6';
+@import 'page7';
+@import 'page8';
+@import 'page9';
+
 @media (min-width: 780px) {
     .pull-right-lg{
         float:right;
@@ -160,6 +239,21 @@ text {
     }
     .flex-column{
         flex-direction: column;
+    }
+
+    /*body:not(.pageload) * {
+    transition: all .25s linear;
+}*/
+
+    .animating picture *, .animating picture *:before, .animating picture *:after {
+        transition: all .25s linear;
+        /*transition-property: left, transform, height, width;*/
+    }
+
+    .animating background *, .animating background,
+    .animating foreground, .animating foreground *,
+    .animating background *:before, .animating background *:after {
+        transition: all .25s linear;
     }
 }
 @media (max-width: 780px) {

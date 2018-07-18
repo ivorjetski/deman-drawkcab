@@ -17,10 +17,11 @@ $.fn.inView = function () {
     obj = $(this);
     var scrollPosition = win.scrollTop();
     var visibleArea = win.scrollTop() + win.height();
-    var objEndPos = (obj.offset().top + obj.outerHeight());
+    var objEndPos = (obj.offset().top + obj.height());
     return (visibleArea >= objEndPos && scrollPosition <= objEndPos ? true : false)
 };
 function pages() {
+
     $('body').addClass('animating');
     clearTimeout($.data(this, 'scrollTimer'));
     $.data(this, 'scrollTimer', setTimeout(function () {
@@ -33,15 +34,35 @@ function pages() {
     else {
         $('body').removeClass('not-top');
     }
+
     $('page').each(function () {
         var id = $(this).attr('id');
         var page = id.slice(-1);
+
         if ($(this).inView() === true) {
-            $('body').attr('page', page);
+
+            if (!scrollTimeout) {
+                scrollTimeout = setTimeout(function () {
+                    $('body').attr('page', page);
+                    scrollTimeout = null;
+                }, throttle);
+            }
+
+
+
+
         }
-    });
+        });
 }
+
+var scrollTimeout;
+var throttle = 50;
+
 $(window).scroll(pages);
 $(window).resize(pages);
 $('column').scroll(pages);
 $('column').resize(pages);
+
+$(window).load(function () {
+    $('body').removeClass('pageload');
+});

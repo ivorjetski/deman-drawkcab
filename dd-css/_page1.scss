@@ -1,63 +1,38 @@
 ﻿
-[page="1"] picture > i:before{
-    padding-top:100%;
-    position:relative;
-}
 
-/*[page="1"] #page1 {
-    display:block;
-}*/
-
-#page1:before, #page1:after{
-    content:'';
-    width:100%;
-    height:100%;
-    position:absolute;
-    top:0;
-    left:0;
-}
 #page1:before {
-    z-index: -1;
-    transform: rotate(-.5deg);
-    background: rgba(245,245,245,.95);
-    top: 0;
-    left: 0;
+    background: rgba(245,245,245,.5)!important;
 }
-#page1:after{
-    background:rgba(0,0,0,0.1);
-    z-index:-2;
-    top:2em;
-    left:2em;
-    transform: rotate(2deg);
+#page1:after {
+    background: rgba(0, 0, 0, 0.05)!important;
 }
-#page1, #page1:before, #page1:after{
-    border-radius:1em;
-}
+
+
 //deman
-[page="1"], [page="2"] {
+[page="1"], [page="3"] {
     & picture i.pi2 i:nth-of-type(4) {
         width: 31em;
         height: 24em;
-        background: #efd4c6;
+        background: $skin;
         transform: translate(33.5em,10em) skewX(-30deg);
         border-radius: 10% 10% 5% 5%;
-        border-top: 2em solid #190d23;
-        border-left: 2em solid #190d23;
+        border-top: 2em solid $stroke;
+        border-left: 2em solid $stroke;
     }
         //hair
         & picture i.pi2 i:nth-of-type(4):after {
             width: 10em;
             height: 2em;
-            background: #190d23;
+            background: $stroke;
             transform: translate(-3em,-3em) rotate(-20deg);
             border-radius: 30%;
-            box-shadow: 1em 1em 0 #190d23;
+            box-shadow: 1em 1em 0 $stroke;
         }
 
         & picture i.pi2 i:nth-of-type(4):before {
             width: 14em;
             height: 4em;
-            background: #190d23;
+            background: $stroke;
             transform: translate(5.2em,-4.9em) skew(30deg) rotate(-8deg);
             border-radius: 10%;
             z-index: -1;
@@ -68,7 +43,7 @@
         height: 2em;
         transform: translate(60em,6em) rotate(20deg);
         border-radius: 10%;
-        box-shadow: -3em 3em 0 -2em #190d23;
+        box-shadow: -3em 3em 0 -2em $stroke;
     }
 
         & picture i.pi2 i:nth-of-type(5):before {
@@ -129,15 +104,15 @@
         height: 25em;
         background: rgba(0,0,0,0.05);
         border-radius: 0 50% 0 0;
-        border-top: 3em solid #190d23;
-        border-right: 1.5em solid #190d23;
+        border-top: 3em solid $stroke;
+        border-right: 1.5em solid $stroke;
         transform: translate(58em,9.1em) rotate(3deg);
     }
     //eyebrow
     & picture i.pi2 i:nth-of-type(10) {
         width: 10em;
         height: 2em;
-        background: #190d23;
+        background: $stroke;
         transform: translate(41em,25em) skew(30deg) rotate(15deg);
         border-radius: 2em;
     }
@@ -146,7 +121,7 @@
             width: 9em;
             height: 2em;
             border-radius: 1.5em;
-            background: #190d23;
+            background: $stroke;
             transform: translate(-10em,2em) rotate(-20deg);
         }
     //eye
@@ -156,8 +131,9 @@
         left: 41em;
         top: 30em;
         border-radius: 50% .5em 50% 50%;
-        background: #190d23;
+        background: $stroke;
         animation: blink 9s infinite;
+        transform: scaleY(1) translateZ(2px);
     }
 
         & picture i.pi2 i:nth-of-type(11):before {
@@ -168,18 +144,15 @@
             bottom: 0;
             margin: auto;
             border-radius: 50%;
-            background: #190d23;
+            background: $stroke;
         }
 
         & picture i.pi2 i:nth-of-type(11):after {
             width: 2em;
             height: 2.5em;
-            /*left: -10em;
-            top: .25em;
-            bottom: 0;*/
             margin: auto;
             border-radius: 50% .5em 50% 50%;
-            background: #190d23;
+            background: $stroke;
             transform: translate(-10em,.25em);
         }
     //nose
@@ -188,8 +161,8 @@
         height: 16em;
         transform: translate(31em,28em) skew(-28deg) rotate(0deg);
         border-radius: 3em;
-        background: #efd4c6;
-        border: 1.5em solid #190d23;
+        background: $skin;
+        border: 1.5em solid $stroke;
         border-top: none;
     }
 
@@ -198,18 +171,16 @@
             height: 14em;
             left: 50%;
             top: -20%;
-            background: #efd4c6;
+            background: $skin;
             transform: rotate(30deg);
         }
 
         & picture i.pi2 i:nth-of-type(9):after {
             width: 14em;
             height: 13em;
-            left: -54%;
-            top: -14%;
-            background: #efd4c6;
-            transform: rotate(-40deg) translateZ(-1px);
-            border-left: 1em solid #190d23;
+            background: $skin;
+            transform: translate(-5em,-1em) rotate(-40deg) translateZ(-1px);
+            border-left: 1.3em solid $stroke;
             border-radius: 1.5em;
         }
     //lip
@@ -217,8 +188,8 @@
         width: 10em;
         height: 14em;
         transform: translate(30em,40em) skew(-5deg) rotate(-10deg);
-        background: #efd4c6;
-        border: 1.5em solid #190d23;
+        background: $skin;
+        border: 1.5em solid $stroke;
         border-top-color: rgba(0,0,0,0);
         border-right-color: rgba(0,0,0,0);
         border-radius: 1em;
@@ -227,28 +198,24 @@
         & picture i.pi2 i:nth-of-type(3):before {
             width: 13em;
             height: 14em;
-            /*right: -13em;
-            top: -1em;*/
             transform: translate(6em,-4em) rotate(20deg);
-            background: #efd4c6;
+            background: $skin;
             border-radius: 1em;
         }
 
         & picture i.pi2 i:nth-of-type(3):after {
             width: 7em;
             height: 12em;
-            /*left: 4em;
-            bottom: -13.5em;*/
             transform: translate(4em,12em) skew(15deg);
-            background: #efd4c6;
-            border-left: 1.7em solid #190d23;
+            background: $skin;
+            border-left: 1.7em solid $stroke;
             border-radius: 0 0 50% 0;
         }
 
     & picture i.pi2 i:nth-of-type(1) {
         width: 10em;
         height: 10em;
-        background: #efd4c6;
+        background: $skin;
         transform: translate(37em,45em);
     }
     //ear
@@ -256,8 +223,8 @@
         width: 12em;
         height: 15em;
         transform: translate(51.5em,30em) skew(-5deg) rotate(10deg);
-        background: #efd4c6;
-        border: 1.5em solid #190d23;
+        background: $skin;
+        border: 1.5em solid $stroke;
         border-bottom-color: rgba(0,0,0,0);
         border-left-color: rgba(0,0,0,0);
         border-radius: 10em 5em 12em 0;
@@ -267,18 +234,16 @@
         width: 10em;
         height: 15em;
         transform: translate(41em,42em) rotate(15deg);
-        background: #efd4c6;
-        border-right: 1.5em solid #190d23;
+        background: $skin;
+        border-right: 1.5em solid $stroke;
     }
 
         & picture i.pi2 i:nth-of-type(13):before {
             width: 9em;
-            height: 10em;
-            /*right: -12em;
-            top: -11em;*/
-            transform: translate(10em,-11.5em) rotate(50deg);
-            background: #efd4c6;
-            border-right: 1.7em solid #190d23;
+            height: 11em;
+            transform: translate(10em,-11em) rotate(50deg);
+            background: $skin;
+            border-right: 1.7em solid $stroke;
             transform-origin: 0 0;
             border-radius: 1em;
             border-bottom: none;
@@ -289,7 +254,7 @@
             height: 5em;
             transform: translate(-1em,11em) skew(10deg) rotate(-10deg);
             background: $skin;
-            border-right: 1.7em solid #190d23;
+            border-right: 1.7em solid $stroke;
             transform-origin: 0 0;
             border-bottom: none;
             opacity:0;
@@ -298,11 +263,7 @@
 
 //shadows
 
-/*[page="1"] picture i.pi3 i{
-    filter: blur(5px);
-}*/
-
-[page="1"], [page="2"] {
+[page="1"], [page="3"] {
     & picture i.pi3 i:nth-of-type(1) {
         width: 9em;
         height: 23em;
@@ -316,8 +277,6 @@
             height: 25em;
             background: rgba(40,10,0,0.05);
             background: linear-gradient( rgba(0,0,0,0.05), rgba(0,0,0,0));
-            /*left: -1.5em;
-            bottom: -37.1em;*/
             transform: rotate(-10deg);
             transform: translate(-1.5em,35em) rotate(-10deg);
         }
@@ -325,8 +284,6 @@
         & picture i.pi3 i:nth-of-type(1):after {
             width: 15em;
             height: 13em;
-            /*left: -4em;
-            bottom: -12em;*/
             transform: translate(-4em,22em) skew(-5deg) rotate(-10deg);
             background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.05));
             background: rgba(40,10,0,0.05);
@@ -342,20 +299,16 @@
     }
 
         & picture i.pi3 i:nth-of-type(2):before {
-            width: 9em;
+            width: 6em;
             height: 25em;
             background: rgba(40,10,0,0.05);
             background: linear-gradient( rgba(0,0,0,0.05), rgba(0,0,0,0));
-            /*left: -1.5em;
-            bottom: -37em;*/
             transform: translate(-1.5em,35em) rotate(-10deg);
         }
 
         & picture i.pi3 i:nth-of-type(2):after {
             width: 15em;
             height: 13em;
-            /*left: -4em;
-            bottom: -12em;*/
             transform: translate(-4em,22em) skew(-5deg) rotate(-10deg);
             background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.05));
             background: rgba(40,10,0,0.05);
@@ -363,26 +316,29 @@
         }
 }
 
-//background
-
-/*[page="1"] background i i{
-    filter: blur(2px);
-}*/
-    [page="1"] background > * {
-        /*background: linear-gradient(#EBEBCA,#EC821B);*/
-        opacity: .8;
+[page="1"] {
+    & background .bi0 i:nth-of-type(1) {
+        width: 100%;
+        height: 70em;
+        background: #896776;
+        transform: translateZ(-10px);
     }
 
-[page="1"] background i i:nth-of-type(1){
-    width:100%;
-    height:70em;
-    background:linear-gradient(#EBEBCA,#EC821B );
-}
-[page="1"] background i i, [page="1"] background i i:before ,[page="1"] background i i:after{
-    background:#A43F1B;
-}
+        & background .bi0 i:nth-of-type(1):before {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#5fadaf,rgba(0,0,0,0) );
+            opacity: 0;
+        }
 
-//
-//
-//
-//
+        & background .bi0 i:nth-of-type(1):after {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(#5fadaf,#f39e66,#B56554, rgba(0,0,0,0) );
+            opacity: 1;
+        }
+
+    & background .bi1 i, & background .bi1 i:before, & background .bi1 i:after {
+        background: #6B5365;
+    }
+}
