@@ -2,7 +2,7 @@
 // page-0
 // page-0
 
-body:not(.animating) [page="0000"], body:not(.animating)[page="0001"] {
+body:not([scrolling="true"])[page="0000"], body:not([scrolling="true"])[page="0001"] {
     & picture {
         animation: breath 3s infinite alternate;
     }
@@ -1684,5 +1684,11 @@ $rain: multiple-box-shadow(2000);
     #page-0000 {
         min-height:0;
         padding-bottom:5em;
+    }
+}
+
+@keyframes breath {
+    100% {
+        transform: translateX(2px);
     }
 }

@@ -20,6 +20,8 @@ function pages() {
     }
     var windowbottom = windowtop + $(window).height() - 100;
 
+    $('body').attr('scrolling', 'true');
+
     var scrollTimeout;
     if (!scrollTimeout) {
         scrollTimeout = setTimeout(function () {
@@ -34,10 +36,11 @@ function pages() {
                     page.attr('inview', 'yes');
                 }
             });
+            $('body').attr('scrolling', 'false');
             scrollTimeout = null;
-        }, 50);
+        }, 250);
     }
-    var id = $('page[inview="yes"]:first').attr('id') || 'page-0000';
+    var id = $('page[inview="yes"]:first').attr('id') || 'page-' + $('body').attr('page');
     var pageref = id.split(/\-/)[1];
     setTimeout(function () {
         $('body').attr('page', pageref);

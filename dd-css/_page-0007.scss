@@ -2,7 +2,6 @@
 // page-7
 // page-7
 
-
 //page stuff
 
 [page="0007"] {
@@ -65,7 +64,7 @@
     }
 }
 
-body:not(.animating)[page="0007"] {
+body:not([scrolling="true"])[page="0007"] {
     & foreground i i:nth-of-type(6), & foreground i i:nth-of-type(7) {
         animation: headlights 1s alternate infinite;
     }

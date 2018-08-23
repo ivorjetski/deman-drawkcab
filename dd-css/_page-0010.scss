@@ -3,7 +3,6 @@
 // page-10
 // page-10
 
-
 [page="0010"], [page="0011"] {
   & background .bi0 {
     //sky
@@ -1094,7 +1093,6 @@
     }
   }
 
-
 @media (orientation:landscape) {
 
   [page="0010"], [page="0011"] {
@@ -1113,9 +1111,6 @@
   }
   }
 
-  /*body:not(.animating) [page="0010"] picture .pi2 i:nth-of-type(18) {
-    animation: car 7s alternate infinite;
-}*/
   @function multiple-box-shadow ($n) {
     $value: '#{random(200)}em #{random(200)}em rgba(155,153,158,0.1)';
 
