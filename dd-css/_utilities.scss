@@ -56,23 +56,6 @@ $spacers: (
       #{$prop}-bottom: $length-y ;
     } } }
 
-// Generates some useful quick font size classes
-@for $i from 0 through 200 {
-  [fontsize="#{$i}"] {
-    font-size: #{$i}px;
-  } }
-
-// Generates some useful quick line height classes
-
-[lineheight="0"]{
-    line-height:0;
-}
-@for $i from 0 through 9 {
-  [lineheight="#{($i / 10 + 1) * 10}"] {
-      line-height: #{$i / 10 * 1 + 1}em;
-  }
-}
-
 // responsive font
 
 @mixin responsive-font($responsive, $min, $max: false, $fallback: false) {

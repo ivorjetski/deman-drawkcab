@@ -1,12 +1,17 @@
-﻿
-[page="2"] picture > i:before{
+﻿// page-2
+// page-2
+// page-2
+
+
+
+[page="0002"] picture > i:before{
     padding-top:100%;
     position:relative;
 }
 
 //background
 
-[page="2"] {
+[page="0002"] {
 
  & background > * {
         opacity: .8;
@@ -39,7 +44,7 @@
     }
 }
 
-[page="2"], [page="3"], [page="4"], [page="5"], [page="6"], [page="7"] {
+[page="0002"], [page="0003"], [page="0004"], [page="0005"], [page="0006"], [page="0007"] {
     & background .bi0 {
         opacity: .7;
     }
@@ -105,7 +110,7 @@
 //
 
 //foreground
-[page="2"], [page="3"], [page="4"] {
+[page="0002"], [page="0003"], [page="0004"] {
     & foreground i {
         /*box-shadow: inset 0px 0px 0rgba(0,0,0,0);*/
         transform: scale(2) translateY(10vh);

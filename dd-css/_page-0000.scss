@@ -1,60 +1,37 @@
-﻿[page="0"], [page="1"] {
+﻿// page-0
+// page-0
+// page-0
+
+body:not(.animating) [page="0000"], body:not(.animating)[page="0001"] {
     & picture {
         animation: breath 3s infinite alternate;
     }
 }
 
-[page="0"], [page="1"] {
+[page="0000"], [page="0001"] {
     & picture > i {
         width: 100%;
     }
 }
 
-[page="0"], [page="1"] {
+[page="0000"], [page="0001"] {
     & picture > i:before {
         padding-top: 100%;
         position: relative;
     }
 }
 
-body {
-    & picture i.pi0 {
-        transform: translateZ(-5px);
-    }
-
-    & picture i.pi1 {
-        transform: translateZ(1px);
-    }
-
-    & picture i.pi2 {
-        transform: translateZ(12px);
-    }
-
-    & picture i.pi3 {
-        transform: translateZ(13px);
-    }
-
-    & background .bi0 {
-        transform: translateZ(-12px);
-    }
-
-    & background .bi1 {
-        transform: translateZ(-11px);
-    }
-
-    & background .bi2 {
-        transform: translateZ(-10px);
-    }
-}
-
-#page0 {
+#page-0000 {
     min-height: calc(100vh - 3em);
 }
+  #page-0000 background {
+    background: #EBEBCA;
+  }
 //
 //
 //
 //top of head
-[page="0"], [page="2"], [page="6"], [page="7"] {
+[page="0000"], [page="0002"], [page="0006"], [page="0007"] {
     & picture i.pi2 i:nth-of-type(4) {
         width: 28em;
         height: 30em;
@@ -92,7 +69,7 @@ body {
     }
 }
 
-[page="0"], [page="1"], [page="2"], [page="3"], [page="4"], [page="5"], [page="6"], [page="7"] {
+[page="0000"], [page="0001"], [page="0002"], [page="0003"], [page="0004"], [page="0005"], [page="0006"], [page="0007"] {
     & picture i.pi2 i:nth-of-type(5):after,
     & picture i.pi2 i:nth-of-type(5):before,
     & picture i.pi2 i:nth-of-type(5),
@@ -121,7 +98,7 @@ body {
     }
 }
 
-[page="0"], [page="2"], [page="6"], [page="7"] {
+[page="0000"], [page="0002"], [page="0006"], [page="0007"] {
     & picture i.pi2 i:nth-of-type(5):before {
         width: 28em;
         height: 2em;
@@ -316,7 +293,7 @@ body {
         }
 }
 //v-neck
-[page="0"], [page="1"], [page="2"], [page="3"], [page="4"], [page="5"], [page="6"], [page="7"] {
+[page="0000"], [page="0001"], [page="0002"], [page="0003"], [page="0004"], [page="0005"], [page="0006"], [page="0007"] {
     & picture i.pi2 i:nth-of-type(2) {
         width: 12em;
         height: 10em;
@@ -327,7 +304,7 @@ body {
     }
 }
 //shadows
-[page="0"], [page="2"], [page="6"], [page="7"] {
+[page="0000"], [page="0002"], [page="0006"], [page="0007"] {
     & picture i.pi3 i:nth-of-type(1) {
         width: 9em;
         height: 23em;
@@ -379,7 +356,7 @@ body {
         }
 }
 //top
-[page="0"], [page="1"], [page="2"], [page="3"], [page="5"], [page="6"], [page="7"] {
+[page="0000"], [page="0001"], [page="0002"], [page="0003"], [page="0005"], [page="0006"], [page="0007"] {
     & picture i.pi1 i:nth-of-type(1) {
         width: 15em;
         height: 36em;
@@ -625,7 +602,7 @@ body {
 }
     //trousers
 
-    [page="0"], [page="1"], [page="2"], [page="3"], [page="4"] {
+    [page="0000"], [page="0001"], [page="0002"], [page="0003"], [page="0004"] {
 
     & picture i.pi0 i:nth-of-type(1) {
         width: 25em;
@@ -861,14 +838,14 @@ body {
 //
 //
 //background
-[page="0"], [page="1"], [page="2"], [page="3"], [page="4"], [page="5"], [page="6"], [page="7"] {
+[page="0000"], [page="0001"], [page="0002"], [page="0003"], [page="0004"], [page="0005"], [page="0006"], [page="0007"] {
     & background > * {
         opacity: .5;
         transform: scale(1.1);
     }
 }
 
-[page="0"] {
+[page="0000"] {
     & background .bi0 i:nth-of-type(1) {
         width: 100%;
         height: 70em;
@@ -895,7 +872,7 @@ body {
     }
 }
 
-[page="0"], [page="1"], [page="2"], [page="3"], [page="4"], [page="5"], [page="6"], [page="7"] {
+[page="0000"], [page="0001"], [page="0002"], [page="0003"], [page="0004"], [page="0005"], [page="0006"], [page="0007"] {
     // bg layer 1
     //not in use
     // bg layer 2
@@ -1067,7 +1044,7 @@ body {
     }
 }
 //background layer 2
-[page="0"], [page="1"] {
+[page="0000"], [page="0001"] {
     & background .bi2 i {
         opacity: 0;
     }
@@ -1080,13 +1057,13 @@ body {
     }
 }
 
-[page="2"] {
+[page="0002"] {
     & background .bi2 {
         transform: skewY(-2deg) scale(1.3) translateX(0);
     }
 }
 
-[page="2"], [page="3"], [page="4"], [page="5"], [page="6"], [page="7"] {
+[page="0002"], [page="0003"], [page="0004"], [page="0005"], [page="0006"], [page="0007"] {
     & background .bi2 i {
         opacity: 1;
     }
@@ -1425,7 +1402,7 @@ body {
 //
 //
 //foreground
-[page="0"], [page="1"], [page="2"], [page="3"], [page="4"], [page="5"], [page="6"] {
+[page="0000"], [page="0001"], [page="0002"], [page="0003"], [page="0004"], [page="0005"], [page="0006"] {
     & foreground i, & foreground i:before, & foreground i:after {
         box-shadow: inset 0px 0px 200px $stroke;
     }
@@ -1627,7 +1604,7 @@ $rain: multiple-box-shadow(2000);
 //
 //
 //
-[page="0"], [page="1"], [page="2"], [page="3"], [page="4"], [page="5"], [page="6"], [page="7"] {
+[page="0000"], [page="0001"], [page="0002"], [page="0003"], [page="0004"], [page="0005"], [page="0006"], [page="0007"] {
     & background .bi1 i:nth-of-type(5) {
         width: 2px;
         height: 200px;
@@ -1639,12 +1616,18 @@ $rain: multiple-box-shadow(2000);
 
 #scroll-note {
     position: absolute;
-    bottom: 50px;
     left: 0;
     right: 0;
     margin: auto;
     color: #fff;
     letter-spacing: .04em;
+}
+
+@media  (orientation:landscape) {
+#scroll-note {
+
+    bottom: 50px;
+}
 }
 
 #scroll-note div {
@@ -1656,6 +1639,12 @@ $rain: multiple-box-shadow(2000);
 .not-top #scroll-note div {
     transform: scaleY(-1) translateY(100px);
     animation: more2 1s infinite alternate ease-in-out;
+}
+
+@media (orientation:portrait) {
+    .not-top #scroll-note div {
+        margin-top: 5em;
+    }
 }
 
 #scroll-note div:after, #scroll-note div:before {
@@ -1676,34 +1665,24 @@ $rain: multiple-box-shadow(2000);
 #scroll-note div:after {
     transform: rotate(-45deg) translateX(9px);
 }
-/*[page="0"] text:before {
+/*[page="0000"] text:before {
     content: '';
     padding-top: 100%;
     display: block;
 }
-[page="0"] text page {
+[page="0000"] text page {
     position: absolute;
     top: 0;
     left: 0;
     height: 100%;
 }*/
-@media (max-width: 780px) {
-    text {
-        margin-top: 45vh;
+@media  (orientation:portrait) {
+    #page-0000 {
+        color: #fff!important;
+        text-shadow:2px 2px 0 $body, 0 0 10px $body ;
     }
-
-    body > column {
-        -webkit-mask-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0), rgba(0,0,0,1), rgba(0,0,0,1));
-        height: 100vh;
-        overflow-y: scroll;
-        overflow-x: hidden;
-    }
-
-    #page0 {
-        color: #fff;
-    }
-
-    #page0 {
-        min-height: 50vh;
+    #page-0000 {
+        min-height:0;
+        padding-bottom:5em;
     }
 }

@@ -1,68 +1,54 @@
-﻿
-//sort out picture size
+﻿//sort out picture size
 function responsiveem() {
     var fontsize = $('picture').width() / 100;
-
-    console.log($('picture').width());
-    console.log(fontsize);
-
     $('.responsiveem').css('font-size', fontsize);
+    setTimeout(function () {
+        $('body').removeClass('pageload');
+    }, 500);
 }
 $(document).ready(responsiveem);
 $(window).resize(responsiveem);
+// show which picture
 
-//page turner
-$.fn.inView = function () {
-    var win = $(window);
-    obj = $(this);
-    var scrollPosition = win.scrollTop();
-    var visibleArea = win.scrollTop() + win.height();
-    var objEndPos = (obj.offset().top + obj.height());
-    return (visibleArea >= objEndPos && scrollPosition <= objEndPos ? true : false)
-};
 function pages() {
-
-    $('body').addClass('animating');
-    clearTimeout($.data(this, 'scrollTimer'));
-    $.data(this, 'scrollTimer', setTimeout(function () {
-        $('body').removeClass('animating');
-    }, 3000));
-    var scrollnumber = ($(window).scrollTop());
-    if (scrollnumber > 0) {
+    var windowtop = $(window).scrollTop();
+    if (windowtop > 0) {
         $('body').addClass('not-top');
     }
     else {
         $('body').removeClass('not-top');
     }
+    var windowbottom = windowtop + $(window).height() - 100;
 
-    $('page').each(function () {
-        var id = $(this).attr('id');
-        var page = id.slice(-1);
-
-        if ($(this).inView() === true) {
-
-            if (!scrollTimeout) {
-                scrollTimeout = setTimeout(function () {
-                    $('body').attr('page', page);
-                    scrollTimeout = null;
-                }, throttle);
-            }
-
-
-
-
-        }
-        });
+    var scrollTimeout;
+    if (!scrollTimeout) {
+        scrollTimeout = setTimeout(function () {
+            $('page').each(function () {
+                var page = $(this);
+                var offsetfix = Math.round(($(window).height() - $('#page-0000').outerHeight()));
+                var pagebottom = page[0].offsetTop + offsetfix + page.height();
+                if (pagebottom < windowbottom) {
+                    page.attr('inview', 'no');
+                }
+                else {
+                    page.attr('inview', 'yes');
+                }
+            });
+            scrollTimeout = null;
+        }, 50);
+    }
+    var id = $('page[inview="yes"]:first').attr('id') || 'page-0000';
+    var pageref = id.split(/\-/)[1];
+    setTimeout(function () {
+        $('body').attr('page', pageref);
+    }, 500);
 }
-
-var scrollTimeout;
-var throttle = 50;
-
 $(window).scroll(pages);
 $(window).resize(pages);
-$('column').scroll(pages);
-$('column').resize(pages);
-
-$(window).load(function () {
-    $('body').removeClass('pageload');
-});
+$(document).ready(pages);
+// top margin amount
+function topmargin() {
+    $('text').css('margin-top', Math.round(($(window).height() - $('#page-0000').outerHeight()) - 24));
+}
+$(document).ready(topmargin);
+$(window).resize(topmargin);

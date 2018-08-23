@@ -1,6 +1,11 @@
-﻿//page stuff
+﻿// page-5
+// page-5
+// page-5
 
-[page="5"], [page="6"], [page="7"] {
+
+//page stuff
+
+[page="0005"], [page="0006"], [page="0007"] {
     & background .bi2 {
         transform: skewY(3deg) scale(.95) translate(20em,-20em);
     }
@@ -14,12 +19,12 @@
     }
 }
 
-[page="5"], [page="6"]{
+[page="0005"], [page="0006"]{
     & foreground i {
         transform: scale(3) translateY(10vh);
     }
     }
-    [page="5"], [page="6"], [page="7"] {
+    [page="0005"], [page="0006"], [page="0007"] {
     //road
     & background .bi2 i:nth-of-type(15) {
         background: linear-gradient( #483343, #2D2234);
@@ -68,7 +73,7 @@
 
 //near arm
 
-[page="5"], [page="6"], [page="7"] {
+[page="0005"], [page="0006"], [page="0007"] {
     //upper arm
     & picture i.pi1 i:nth-of-type(5) {
         width: 14em;
@@ -148,7 +153,7 @@
     }
 }
 
-[page="5"], [page="6"], [page="7"] {
+[page="0005"], [page="0006"], [page="0007"] {
 
     & picture i.pi0 i:nth-of-type(1) {
         width: 25em;
@@ -370,7 +375,7 @@
         }
 }
 
-/*[page="5"] {
+/*[page="0005"] {
     & picture > * {
         transform: scale(.5);
         transform-origin: 50% 0;
